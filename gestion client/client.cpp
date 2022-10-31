@@ -3,6 +3,7 @@
 #include<QtDebug>
 #include <iostream>
 #include<QObject>
+#include <QString>
 using namespace std;
 //ici c'st la gestion de client
 Client::Client()
