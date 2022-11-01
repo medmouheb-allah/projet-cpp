@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1499</width>
+    <height>801</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-120</y>
+      <width>1531</width>
+      <height>901</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>GroupBox</string>
+    </property>
+    <widget class="QPushButton" name="pushButton_17">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>450</y>
+       <width>881</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Palatino Linotype</family>
+       <pointsize>13</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+
+	font: 13pt &quot;Palatino Linotype&quot;;
+gridline-color: rgb(200, 152, 255);
+	border-color: rgb(255, 235, 205);
+	background-color: rgb(255, 235, 205);
+	border-top-color: rgb(255, 235, 205);
+	color: rgb(0, 0, 0);
+border-style: solid;
+    border-radius: 14px;
+}
+
+QPushButton:hover
+{
+	
+	
+	font: 13pt &quot;Palatino Linotype&quot;;
+	
+	color: rgb(255, 255, 255);
+	background-color: rgb(139, 69, 19);
+
+}
+QPushButton:pressed
+{
+	
+	font: 13pt &quot;Palatino Linotype&quot;;
+	background-color: rgb(255, 235, 205);
+
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Gestion des salles évenements</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>320</y>
+       <width>71</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font: 16pt &quot;Palatino Linotype&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Menu</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_18">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>510</y>
+       <width>881</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Palatino Linotype</family>
+       <pointsize>13</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+
+	font: 13pt &quot;Palatino Linotype&quot;;
+gridline-color: rgb(200, 152, 255);
+	border-color: rgb(255, 235, 205);
+	background-color: rgb(255, 235, 205);
+	border-top-color: rgb(255, 235, 205);
+	color: rgb(0, 0, 0);
+border-style: solid;
+    border-radius: 14px;
+}
+
+QPushButton:hover
+{
+	
+	
+	font: 13pt &quot;Palatino Linotype&quot;;
+	
+	color: rgb(255, 255, 255);
+	background-color: rgb(139, 69, 19);
+
+}
+QPushButton:pressed
+{
+	
+	font: 13pt &quot;Palatino Linotype&quot;;
+	background-color: rgb(255, 235, 205);
+
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Gestion des évenements</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_19">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>570</y>
+       <width>881</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Palatino Linotype</family>
+       <pointsize>13</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+
+	font: 13pt &quot;Palatino Linotype&quot;;
+gridline-color: rgb(200, 152, 255);
+	border-color: rgb(255, 235, 205);
+	background-color: rgb(255, 235, 205);
+	border-top-color: rgb(255, 235, 205);
+	color: rgb(0, 0, 0);
+border-style: solid;
+    border-radius: 14px;
+}
+
+QPushButton:hover
+{
+	
+	
+	font: 13pt &quot;Palatino Linotype&quot;;
+	
+	color: rgb(255, 255, 255);
+	background-color: rgb(139, 69, 19);
+
+}
+QPushButton:pressed
+{
+	
+	font: 13pt &quot;Palatino Linotype&quot;;
+	background-color: rgb(255, 235, 205);
+
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Gestion des clients</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_fournisseur">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>630</y>
+       <width>881</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Palatino Linotype</family>
+       <pointsize>13</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+
+	font: 13pt &quot;Palatino Linotype&quot;;
+gridline-color: rgb(200, 152, 255);
+	border-color: rgb(255, 235, 205);
+	background-color: rgb(255, 235, 205);
+	border-top-color: rgb(255, 235, 205);
+	color: rgb(0, 0, 0);
+border-style: solid;
+    border-radius: 14px;
+}
+
+QPushButton:hover
+{
+	
+	
+	font: 13pt &quot;Palatino Linotype&quot;;
+	
+	color: rgb(255, 255, 255);
+	background-color: rgb(139, 69, 19);
+
+}
+QPushButton:pressed
+{
+	
+	font: 13pt &quot;Palatino Linotype&quot;;
+	background-color: rgb(255, 235, 205);
+
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Gestion des fournisseurs</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_21">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>690</y>
+       <width>881</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Palatino Linotype</family>
+       <pointsize>13</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+
+	font: 13pt &quot;Palatino Linotype&quot;;
+gridline-color: rgb(200, 152, 255);
+	border-color: rgb(255, 235, 205);
+	background-color: rgb(255, 235, 205);
+	border-top-color: rgb(255, 235, 205);
+	color: rgb(0, 0, 0);
+border-style: solid;
+    border-radius: 14px;
+}
+
+QPushButton:hover
+{
+	
+	
+	font: 13pt &quot;Palatino Linotype&quot;;
+	
+	color: rgb(255, 255, 255);
+	background-color: rgb(139, 69, 19);
+
+}
+QPushButton:pressed
+{
+	
+	font: 13pt &quot;Palatino Linotype&quot;;
+	background-color: rgb(255, 235, 205);
+
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Gestion des employes</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>70</y>
+       <width>1641</width>
+       <height>841</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../Downloads/88cc746c415f878d95b9b63060da2ceb.jpg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <zorder>label</zorder>
+    <zorder>pushButton_17</zorder>
+    <zorder>label_2</zorder>
+    <zorder>pushButton_18</zorder>
+    <zorder>pushButton_19</zorder>
+    <zorder>pb_fournisseur</zorder>
+    <zorder>pushButton_21</zorder>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1499</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
