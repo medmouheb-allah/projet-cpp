@@ -1,4 +1,6 @@
 #include "employe.h"
+#include<iostream>
+#include <QDebug>
 
 employe::employe(int d,QString a,QString b,QString c,int e)
 {
@@ -23,6 +25,7 @@ bool employe :: ajouter()
     query.bindValue(":email",email) ;
     query.bindValue(":id",res) ;
     query.bindValue(":num",res2) ;
+
 
     return  query.exec() ;
 }
@@ -51,6 +54,7 @@ QSqlQueryModel * employe:: afficher()
   model->setHeaderData(3,Qt::Horizontal,QObject::tr("email")) ;
   model->setHeaderData(4,Qt::Horizontal,QObject::tr("num")) ;
 
+ // qDebug() << res2 << '\n';
   return  model ;
 
 
@@ -80,5 +84,45 @@ bool employe::modifier(int id,QString email,QString nom,QString prenom,int num)
      query.bindValue(":prenom",prenom);
      query.bindValue(":num",res2) ;
      return query.exec();
+
+}
+
+
+
+QSqlQueryModel * employe::AfficherTrieCIN()
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("SELECT * FROM EMPLOYE ORDER BY ID_EMP");
+    return model;
+}
+
+
+
+QSqlQueryModel * employe::AfficherTrieNom()
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("SELECT * FROM EMPLOYE ORDER BY NOM_EMP");
+    return model;
+}
+
+
+QSqlQueryModel * employe::AfficherTriePrenom()
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("SELECT * FROM EMPLOYE ORDER BY PRENOM_EMP");
+    return model;
+}
+
+
+
+QSqlQueryModel * employe::rechercherafficher(QString nom)
+{
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery q;
+    q.prepare("select * from EMPLOYE where ID_EMP like '"+nom+"%' or NOM_EMP LIKE '"+nom+"%' or PRENOM_EMP like '"+nom+"%' ");
+    q.addBindValue("%"+ nom +"%");
+    q.exec();
+    model->setQuery(q);
+    return (model);
 
 }

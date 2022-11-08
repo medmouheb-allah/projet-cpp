@@ -29,8 +29,13 @@ public:
     bool ajouter() ;
     QSqlQueryModel *afficher();
     bool supprimer(int) ;
-   bool  modifier(int ,QString ,QString,QString ,int ) ;
+    bool  modifier(int ,QString ,QString,QString ,int ) ;
 
+    QSqlQueryModel * AfficherTrieCIN() ;
+    QSqlQueryModel * AfficherTrieNom() ;
+    QSqlQueryModel * AfficherTriePrenom() ;
+
+    QSqlQueryModel * rechercherafficher(QString ) ;
 };
 
 #endif // EMPLOYE_H

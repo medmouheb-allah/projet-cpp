@@ -1372,11 +1372,67 @@ font: 8pt &quot;Elephant&quot;;</string>
     <widget class="QTableView" name="affichage_employe">
      <property name="geometry">
       <rect>
-       <x>630</x>
+       <x>600</x>
        <y>160</y>
        <width>531</width>
        <height>201</height>
       </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>1260</x>
+       <y>840</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Elephant</family>
+       <pointsize>-1</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+
+
+{
+	
+	background-color:rgb(85, 0, 0);
+
+
+
+	border-style: outset;
+    border-width: 2px;
+    border-radius: 14px;
+    border-color: beige;
+    font: bold 14px;
+ 
+    padding: 10px;
+	color: rgb(255, 255, 255);
+
+}
+QPushButton:hover
+{
+		background-color: rgb(237, 218, 204);
+	color: rgb(0, 0, 0);
+	gridline-color: rgb(94, 118, 255);
+}
+QPushButton:pressed
+{
+	
+	background-color: rgb(255, 180, 200);
+gridline-color:rgb(228, 128, 255)
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Trier</string>
      </property>
     </widget>
     <zorder>label_pic_2</zorder>
@@ -1398,6 +1454,7 @@ font: 8pt &quot;Elephant&quot;;</string>
     <zorder>label_pic_8</zorder>
     <zorder>label_pic_7</zorder>
     <zorder>affichage_employe</zorder>
+    <zorder>pushButton_6</zorder>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">

@@ -14,10 +14,30 @@ Dialog::Dialog(QWidget *parent) :
 
     ui->lineEdit_3->setValidator(new QIntValidator(0,9999999,this) ) ;
     ui->lineEdit_5->setValidator(new QIntValidator(0,99999999,this)) ;
-    ui->comboBox->addItem("CIN");
+
+  /*  int CIN=ui->lineEdit_3->text().toInt() ;
+    int num =ui->lineEdit_5->text().toInt() ;
+
+    if(CIN < 9999999 || ui->lineEdit->text() == "" || ui->lineEdit_2->text() == "" || ui->lineEdit_4->text() == "" || num < 99999999)
+    {
+               ui->lineEdit_3->setStyleSheet("border: 1px solid red;");
+               if(CIN > 999999 )
+               {
+                   ui->lineEdit_3->setStyleSheet("border: 1px solid black;");
+               }
+
+               ui->lineEdit->setStyleSheet("border: 1px solid red;") ;
+
+               if( ui->lineEdit->text()!= "" )
+                   ui->lineEdit->setStyleSheet("border: 1px solid black;") ;
+               }*/
+
+
+
+        ui->comboBox->addItem("CIN");
         ui->comboBox->addItem("Nom");
-         ui->comboBox->addItem("Prenom");
-         ui->affichage_employe->setModel(em.afficher()) ;
+        ui->comboBox->addItem("Prenom");
+        ui->affichage_employe->setModel(em.afficher()) ;
 
 
 
@@ -98,3 +118,54 @@ void Dialog::on_b2_clicked()
 
 }
 
+
+void Dialog::on_affichage_employe_doubleClicked()
+{
+   // selected=ui->affichage_employe->model()
+    QModelIndex index = ui->affichage_employe->currentIndex();
+             QString ci = index.data(Qt::DisplayRole).toString();
+              QString nom = ui->affichage_employe->model()->index(index.row(), 2).data(Qt::DisplayRole).toString();
+              ui->lineEdit->setText(nom);
+               QString prenom = ui->affichage_employe->model()->index(index.row(), 3).data(Qt::DisplayRole).toString();
+                 ui->lineEdit_2->setText(prenom);
+                QString email = ui->affichage_employe->model()->index(index.row(), 1).data(Qt::DisplayRole).toString();
+                 ui->lineEdit_4->setText(email);
+                 QString tel = ui->affichage_employe->model()->index(index.row(), 4).data(Qt::DisplayRole).toString();
+                 ui->lineEdit_5->setText(tel) ;
+                  QString cin = ui->affichage_employe->model()->index(index.row(), 0).data(Qt::DisplayRole).toString();
+                  ui->lineEdit_3->setText(cin);
+
+
+
+}
+
+
+void Dialog::on_pushButton_2_clicked()
+{
+    employe emp ;
+    QString tri= ui->comboBox->currentText() ;
+
+    if(tri=="Nom")
+    {
+
+        ui->affichage_employe->setModel(emp.AfficherTrieNom()) ;
+    }  else
+        if (tri=="CIN")
+        {
+        ui->affichage_employe->setModel(emp.AfficherTrieCIN()) ;
+        }
+        else
+        {
+        ui->affichage_employe->setModel(emp.AfficherTriePrenom()) ;
+        }
+    }
+
+
+
+
+void Dialog::on_pushButton_8_clicked()
+{
+    employe emp;
+    QString aff= ui->lineEdit_8->text() ;
+    ui->affichage_employe->setModel(emp.rechercherafficher(aff)) ;
+}
