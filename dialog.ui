@@ -738,6 +738,70 @@ QPushButton:pressed
        <pixmap>../../../../bg.png</pixmap>
       </property>
      </widget>
+     <widget class="QComboBox" name="comboBox_3">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>270</y>
+        <width>111</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Homme</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Femme</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QFrame" name="frame_8">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>270</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 3px solid black;
+border-radius: 40px;
+background: white;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+     <zorder>label_formulaire</zorder>
+     <zorder>frame_2</zorder>
+     <zorder>frame_3</zorder>
+     <zorder>label_2</zorder>
+     <zorder>label_3</zorder>
+     <zorder>label_4</zorder>
+     <zorder>label_5</zorder>
+     <zorder>label_6</zorder>
+     <zorder>frame_4</zorder>
+     <zorder>label_7</zorder>
+     <zorder>label_8</zorder>
+     <zorder>frame_5</zorder>
+     <zorder>label_9</zorder>
+     <zorder>label_10</zorder>
+     <zorder>frame_7</zorder>
+     <zorder>bouton1</zorder>
+     <zorder>b2</zorder>
+     <zorder>label_12</zorder>
+     <zorder>label_15</zorder>
+     <zorder>label_16</zorder>
+     <zorder>label</zorder>
+     <zorder>frame_8</zorder>
+     <zorder>comboBox_3</zorder>
     </widget>
     <widget class="QLabel" name="label_11">
      <property name="geometry">
@@ -826,9 +890,9 @@ gridline-color:rgb(228, 128, 255)
     <widget class="QLineEdit" name="lineEdit_8">
      <property name="geometry">
       <rect>
-       <x>890</x>
+       <x>780</x>
        <y>40</y>
-       <width>221</width>
+       <width>331</width>
        <height>41</height>
       </rect>
      </property>
@@ -909,23 +973,13 @@ color:rgb(8, 8, 8);</string>
        <string>Suppression :</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_6">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>50</y>
-        <width>451</width>
-        <height>41</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_pic_3">
       <property name="geometry">
        <rect>
-        <x>410</x>
+        <x>10</x>
         <y>60</y>
         <width>41</width>
-        <height>21</height>
+        <height>41</height>
        </rect>
       </property>
       <property name="mouseTracking">
@@ -944,6 +998,27 @@ color:rgb(8, 8, 8);</string>
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QComboBox" name="comboBox_2">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>60</y>
+        <width>411</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 6px;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <zorder>label_17</zorder>
+     <zorder>label_14</zorder>
+     <zorder>comboBox_2</zorder>
+     <zorder>label_pic_3</zorder>
     </widget>
     <widget class="QPushButton" name="pushButton_3">
      <property name="geometry">
@@ -1435,6 +1510,16 @@ gridline-color:rgb(228, 128, 255)
       <string>Trier</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="lineEdit_6">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>790</y>
+       <width>451</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
     <zorder>label_pic_2</zorder>
     <zorder>mainframe</zorder>
     <zorder>label_11</zorder>
@@ -1455,11 +1540,7 @@ gridline-color:rgb(228, 128, 255)
     <zorder>label_pic_7</zorder>
     <zorder>affichage_employe</zorder>
     <zorder>pushButton_6</zorder>
-   </widget>
-   <widget class="QWidget" name="tab_2">
-    <attribute name="title">
-     <string>Tab 2</string>
-    </attribute>
+    <zorder>lineEdit_6</zorder>
    </widget>
   </widget>
  </widget>

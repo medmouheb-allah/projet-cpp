@@ -1,6 +1,7 @@
-QT       += core gui sql
+QT       += core gui sql charts
+QT += printsupport
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 
@@ -20,17 +21,20 @@ SOURCES += \
     dialog.cpp \
     employe.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    stat_combo.cpp
 
 HEADERS += \
     connection.h \
     dialog.h \
     employe.h \
-    mainwindow.h
+    mainwindow.h \
+    stat_combo.h
 
 FORMS += \
     dialog.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    stat_combo.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
