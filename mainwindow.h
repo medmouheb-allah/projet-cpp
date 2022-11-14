@@ -3,6 +3,11 @@
 
 #include <QMainWindow>
 #include"dialog.h"
+#include"authentification.h"
+#include <QtSql>
+#include <QSqlDatabase>
+#include <QMessageBox>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,5 +26,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QSqlDatabase database;
+      login L;
 };
 #endif // MAINWINDOW_H

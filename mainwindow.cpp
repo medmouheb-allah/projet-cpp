@@ -19,6 +19,31 @@ void MainWindow::on_pushButton_clicked()
     //int id=ui->lin->text().toInt() ;
     //QString
 
-    Dialog *MainWindow=new Dialog(this);
-            MainWindow->show();
+
+
+
+
+            QSqlQuery qry;
+                QString  USERNAME=ui->lineEdit->text();
+                QString  MDP=ui->lineEdit_2->text();
+
+                   if(qry.exec("SELECT PRENOM_EMP, ID_EMP FROM EMPLOYE WHERE PRENOM_EMP=\'"+ USERNAME +"\' AND ID_EMP=\'" + MDP + "\'"))
+                   {
+                       if(qry.next())
+                       {
+                           Dialog *MainWindow=new Dialog(this);
+                           MainWindow->show();
+                           QMessageBox::information(this, "Success","LOG In Success");
+                           qry.exec();
+
+
+                                // ui->label_errur->setText("[+]Valid Username and Password");
+                       }else{
+                                              //   ui->label_errur->setText("[-]UnValid Username and Password");
+
+                           QMessageBox::information(this, "Failed","Log In Failed");
+
+                                   }
+
+                       }
 }

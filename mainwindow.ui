@@ -49,8 +49,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>10</y>
+      <x>750</x>
+      <y>80</y>
       <width>191</width>
       <height>61</height>
      </rect>
@@ -58,7 +58,7 @@
     <property name="font">
      <font>
       <family>Bahnschrift SemiBold SemiConden</family>
-      <pointsize>16</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -70,8 +70,8 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>260</y>
+      <x>680</x>
+      <y>620</y>
       <width>191</width>
       <height>61</height>
      </rect>
@@ -91,10 +91,10 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>70</y>
-      <width>511</width>
-      <height>181</height>
+      <x>570</x>
+      <y>150</y>
+      <width>521</width>
+      <height>281</height>
      </rect>
     </property>
     <property name="title">
@@ -103,8 +103,8 @@
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>20</y>
+       <x>10</x>
+       <y>30</y>
        <width>151</width>
        <height>21</height>
       </rect>
@@ -123,7 +123,7 @@
      <property name="geometry">
       <rect>
        <x>150</x>
-       <y>20</y>
+       <y>30</y>
        <width>161</width>
        <height>31</height>
       </rect>
@@ -132,8 +132,8 @@
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>70</y>
+       <x>10</x>
+       <y>120</y>
        <width>121</width>
        <height>21</height>
       </rect>
@@ -152,17 +152,20 @@
      <property name="geometry">
       <rect>
        <x>150</x>
-       <y>70</y>
+       <y>120</y>
        <width>161</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
        <x>350</x>
-       <y>140</y>
+       <y>210</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -199,7 +202,7 @@ QPushButton
      <property name="geometry">
       <rect>
        <x>280</x>
-       <y>30</y>
+       <y>40</y>
        <width>21</width>
        <height>16</height>
       </rect>
@@ -229,7 +232,7 @@ image: url(:/Downloads/310431606_1123962171840871_611645683765199052_n.png);</st
      <property name="geometry">
       <rect>
        <x>280</x>
-       <y>80</y>
+       <y>130</y>
        <width>21</width>
        <height>16</height>
       </rect>
@@ -258,8 +261,8 @@ image: url(:/Downloads/310431606_1123962171840871_611645683765199052_n.png);</st
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>330</y>
+      <x>530</x>
+      <y>650</y>
       <width>511</width>
       <height>261</height>
      </rect>

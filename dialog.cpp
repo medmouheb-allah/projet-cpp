@@ -16,8 +16,21 @@ Dialog::Dialog(QWidget *parent) :
     //test= c.createconnection() ;
     ui->setupUi(this);
 
-    ui->lineEdit_3->setValidator(new QIntValidator(0,9999999,this) ) ;
-    ui->lineEdit_5->setValidator(new QIntValidator(0,99999999,this)) ;
+    ui->lineEdit_3->setValidator(new QIntValidator(1000,9999999,this) ) ;
+    ui->lineEdit_5->setValidator(new QIntValidator(1000,99999999,this)) ;
+
+    QRegularExpression r1("\\b[A-Z._%+-]+@[A-Z.-]+\\.[A-Z]\\b",QRegularExpression::CaseInsensitiveOption);
+
+    ui->lineEdit->setValidator(new QRegularExpressionValidator(r1, this));
+
+    QRegularExpression r2("\\b[A-Z._%+-]+@[A-Z.-]+\\.[A-Z]\\b",QRegularExpression::CaseInsensitiveOption);
+    ui->lineEdit_2->setValidator(new QRegularExpressionValidator(r2, this));
+
+    QRegularExpression r3("\\b[A-Z._%+-]+@[A-Z.-]*\\.[A-Z]\\b",QRegularExpression::CaseInsensitiveOption);
+    ui->lineEdit_4->setValidator(new QRegularExpressionValidator(r3, this));
+
+
+
 
   /*  int CIN=ui->lineEdit_3->text().toInt() ;
     int num =ui->lineEdit_5->text().toInt() ;
