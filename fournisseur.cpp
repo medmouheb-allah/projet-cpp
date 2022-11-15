@@ -4,6 +4,7 @@
 #include <QDebug>
 #include"interface.h"
 #include<QObject>
+
 Fournisseur::Fournisseur()
 {
     ID_FOURNISSEUR="";
@@ -138,3 +139,61 @@ bool Fournisseur::supprimer(QString  ID_FOURNISSEUR)
           query.bindValue(":ID", ID_FOURNISSEUR );
           return query.exec();
 }
+
+
+
+
+QSqlQueryModel * Fournisseur::rechercherID(QString ID_FOURNISSEUR )
+{
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery q;
+    q.prepare("SELECT* FROM FOURNISSEUR where ID_FOUNISSEUR like '"+ID_FOURNISSEUR+"%' or NOM LIKE '"+ID_FOURNISSEUR+"%' or PRENOM like '"+ID_FOURNISSEUR+"%' ");
+    q.addBindValue("%"+ ID_FOURNISSEUR +"%");
+    q.exec();
+    model->setQuery(q);
+    return (model);
+}
+
+QSqlQueryModel * Fournisseur::Trieid()
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("SELECT * FROM FOURNISSEUR ORDER BY ID_FOUNISSEUR");
+    return model;
+}
+
+
+
+QSqlQueryModel * Fournisseur::Trienom()
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("SELECT * FROM FOURNISSEUR ORDER BY NOM");
+    return model;
+}
+
+
+QSqlQueryModel * Fournisseur::TriePrenom()
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("SELECT * FROM FOURNISSEUR ORDER BY PRENOM");
+    return model;
+}
+
+QString Fournisseur:: exporter()
+ {
+    QString text=" PRINT \n " ;
+    QSqlQuery query ;
+    QString i,x,z,a,e;
+    query.exec("select * from FOURNISSEUR ");
+      while (query.next())
+      {
+         i=query.value(0).toString();
+         e=query.value(1).toString();
+         x=query.value(2).toString();
+         z=query.value(3).toString();
+         a=query.value(4).toString();
+
+
+
+        text += "\n ID_FOUNISSEUR : "+i+"\n NOM : "+e+"\n PRENOM : "+ x+"\n EMAIL : "+ z+"\n NUMERO:"+a+"\n" ;
+     }           return text ;
+ }

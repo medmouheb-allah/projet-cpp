@@ -2,7 +2,8 @@
 #define FOURNISSEUR_H
 #include <QString>
 #include <QSqlQueryModel>
-
+#include <QVBoxLayout>
+#include <QDebug>
 
 class Fournisseur
 {
@@ -23,6 +24,11 @@ public:
     QSqlQueryModel* afficher();
     bool supprimer(QString);
     bool modifier_fournisseur(QString);
+      QSqlQueryModel * rechercherID(QString);
+      QSqlQueryModel * Trieid();
+      QSqlQueryModel * Trienom();
+      QSqlQueryModel * TriePrenom();
+      QString exporter();
 
 private:
     QString ID_FOURNISSEUR;

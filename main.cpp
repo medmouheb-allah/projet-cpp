@@ -3,8 +3,12 @@
 #include <QMessageBox>
 #include "connection.h"
 #include"fournisseur.h"
+
 int main(int argc, char *argv[])
 {
+
+
+
     QApplication a(argc, argv);
     connection c;
     bool test=c.createconnection();

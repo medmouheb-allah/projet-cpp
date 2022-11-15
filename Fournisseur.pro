@@ -1,5 +1,6 @@
 QT       += core gui sql
-
+QT +=printsupport
+QT +=network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -17,16 +18,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     connection.cpp \
+    facture.cpp \
     fournisseur.cpp \
     interface.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    smtp.cpp
 
 HEADERS += \
     connection.h \
+    facture.h \
     fournisseur.h \
     interface.h \
-    mainwindow.h
+    mainwindow.h \
+    smtp.h
 
 FORMS += \
     interface.ui \
