@@ -1,6 +1,8 @@
 #include "interface.h"
 #include "ui_interface.h"
 #include "ui_stat.h"
+#include <QSerialPort>
+#include <QSerialPortInfo>
 #include<QIntValidator>
 #include<QMessageBox>
 #include <QString>
@@ -8,6 +10,7 @@
 #include "smtp.h"
 #include "facture.h"
 #include"fournisseur.h"
+#include "arduino.h"
 
 Interface::Interface(QWidget *parent) :
     QDialog(parent),
@@ -20,7 +23,22 @@ Interface::Interface(QWidget *parent) :
       ui->tableView->setModel(F.afficher());
       ui->le_prix->setValidator(new QIntValidator(100, 999999999, this));
       ui->le_total->setValidator(new QIntValidator(100, 999999999, this));
-      ui->tableView->setModel(A.afficher());
+      ui->table_facture->setModel(A.afficher());
+      ui->comboBox_2->setModel(A.combo_fournisseur());
+      ui->comboBox_3->setModel(A.combo_evenement());
+      int ret=C.connect_arduino(); // lancer la connexion à arduino
+      switch(ret){
+      case(0):qDebug()<< "arduino is available and connected to : "<< C.getarduino_port_name();
+          break;
+      case(1):qDebug() << "arduino is available but not connected to :" <<C.getarduino_port_name();
+         break;
+      case(-1):qDebug() << "arduino is not available";
+      }
+       QObject::connect(C.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+       //le slot update_label suite à la reception du signal readyRead (reception des données).
+
+
+
 }
 Interface::~Interface()
 {
@@ -159,13 +177,15 @@ void Interface::on_sendBtn_clicked()
 
 void Interface::on_pushButton_7_clicked()
 {
+    int CODE_EVENNEMENT=ui->comboBox_3->currentText().toInt();
+    QString ID_FOURNISSEUR=ui->comboBox_2->currentText();
     QString DESCRIPTION = ui->le_description->text();
     QString QUANTITE=ui->le_quantite->text();
     QString PRIXUNIT =ui->le_prix ->text();
     QString TOTAL = ui ->le_total ->text();
 
 
-        Facture C(DESCRIPTION,QUANTITE,PRIXUNIT,TOTAL);
+        Facture C(DESCRIPTION,QUANTITE,PRIXUNIT,TOTAL,ID_FOURNISSEUR,CODE_EVENNEMENT);
         bool test=C.ajouter();
         QMessageBox msgBox;
         if(test)
@@ -179,13 +199,16 @@ void Interface::on_pushButton_7_clicked()
 
 void Interface:: on_pushButton_clicked()
 {
+    QString ID_FOURNISSEUR =ui->comboBox_2->currentText();
+    int CODE_EVENNEMENT=ui->comboBox_3->currentText().toInt();
+
 QString DESCRIPTION = ui->le_description->text();
 QString QUANTITE=ui->le_quantite->text();
 QString PRIXUNIT =ui->le_prix ->text();
 QString TOTAL = ui ->le_total ->text();
 
 
-    Facture C(DESCRIPTION,QUANTITE,PRIXUNIT,TOTAL);
+    Facture C(DESCRIPTION,QUANTITE,PRIXUNIT,TOTAL,ID_FOURNISSEUR,CODE_EVENNEMENT);
     if(C.modifier_facture(DESCRIPTION))
        {
                 QMessageBox::information(nullptr, QObject::tr("Modifier une FACTURE"),
@@ -204,10 +227,80 @@ QString TOTAL = ui ->le_total ->text();
           ui->le_quantite->setText("");
           ui->le_prix->setText("");
           ui->le_total->setText("");
-
+          ui->comboBox_2->currentText();
+          ui->comboBox_3->currentText();
+          ui->setupUi(this);
 
        }
+ui->table_facture->setModel(A.afficher());
+}
+void Interface::update_label()
+{
+
+    data=C.read_from_arduino();
+//QString x=QString::fromStdString(data.toStdString());
+       // ui->labelmsg->setText(data);
+
+       // QString data = C.read_from_arduino();
+        int result = data.split( ',' )[0].toInt();
+        qDebug()<< result;
+        if (result == 0 )
+            ui->fireLabel->setText("FIRE");
+        else if (result == 1)
+            ui->fireLabel->setText("NO FIRE");
+
+ /* if(data=="1")
+  {
+      ui->labelmsg->setText("ON"); // si les données reçues de arduino via la liaison série sont égales à 1
+  // alors afficher ON
+  }
+
+   /* else if (data=="0")
+  {
+      ui->label->setText("OFF");   // si les données reçues de arduino via la liaison série sont égales à 0
+   //alors afficher off
+  }
+
+  else if(data=="2")
+  {
+      ui->label->setText("AUTO");   // si les données reçues de arduino via la liaison série sont égales à 2
+   //alors afficher auto
+  }*/
+}
+
+
+void Interface::on_pushButton_2_clicked()
+{
+    C.write_to_arduino("0"); //envoyer 0 à arduino
 
 }
+
+void Interface::on_pushButton_3_clicked()
+{
+    C.write_to_arduino("1"); //envoyer 1 à arduino
+}
+
+void Interface::on_pushButton_4_clicked()
+{
+    /* data=C.read_from_arduino();
+     int x=data.toInt();
+     if(x>73)
+     C.write_to_arduino("1"); //envoyer 1 à arduino
+     else
+      C.write_to_arduino("0"); //envoyer 0 à arduino*/
+   //  mod auto
+     C.write_to_arduino("2"); //envoyer 2 à arduino*/
+
+
+}
+
+void Interface::on_refreshButton_clicked()
+{
+}
+
+void Interface::on_offButton_clicked()
+{
+        C.write_to_arduino("s");
+    }
 
 

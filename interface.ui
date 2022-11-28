@@ -557,7 +557,7 @@ background-color: rgb(255, 255, 255);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../Downloads/search-interface-symbol.png</pixmap>
+     <pixmap>../Downloads/search-interface-symbol.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -741,7 +741,7 @@ QPushButton:pressed
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../Downloads/479fb2e4ce37785e291eefaa71cb22c0.jpg</pixmap>
+     <pixmap>../Downloads/479fb2e4ce37785e291eefaa71cb22c0.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -900,7 +900,7 @@ color: rgb(0, 0, 0);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../Downloads/bill.png</pixmap>
+     <pixmap>../Downloads/bill.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -919,7 +919,7 @@ color: rgb(0, 0, 0);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../Downloads/bill.png</pixmap>
+     <pixmap>../Downloads/bill.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1059,7 +1059,7 @@ QPushButton:pressed
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../Downloads/pdf.png</pixmap>
+     <pixmap>../Downloads/pdf.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1078,7 +1078,7 @@ QPushButton:pressed
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../Downloads/bar-chart.png</pixmap>
+     <pixmap>../Downloads/bar-chart.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1228,7 +1228,7 @@ color: rgb(255, 255, 255);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../Downloads/email.png</pixmap>
+     <pixmap>../../Downloads/email.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1247,7 +1247,7 @@ color: rgb(255, 255, 255);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../Downloads/pdf.png</pixmap>
+     <pixmap>../../Downloads/pdf.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1270,7 +1270,7 @@ background: white;</string>
    <widget class="QFrame" name="tab_facture">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>510</x>
       <y>300</y>
       <width>521</width>
       <height>191</height>
@@ -1835,6 +1835,91 @@ QPushButton:pressed
      <string>Ajouter</string>
     </property>
    </widget>
+   <widget class="QComboBox" name="comboBox_2">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>650</y>
+      <width>141</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_3">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>650</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>680</y>
+      <width>411</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIRE_ALARM</string>
+    </property>
+    <widget class="QPushButton" name="offButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>81</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SIGNAL</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="refreshButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>refresh</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="fireLabel">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>60</y>
+       <width>191</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_27">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>20</y>
+       <width>101</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
    <zorder>label_4</zorder>
    <zorder>label_2</zorder>
    <zorder>tab_fournisseur</zorder>
@@ -1872,6 +1957,27 @@ QPushButton:pressed
    <zorder>pb_modifier_2</zorder>
    <zorder>pb_modifier_3</zorder>
    <zorder>pushButton_11</zorder>
+   <zorder>comboBox_2</zorder>
+   <zorder>comboBox_3</zorder>
+   <zorder>groupBox_3</zorder>
+  </widget>
+  <widget class="QLabel" name="labelmsg">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>760</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources/>
