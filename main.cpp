@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include "connection.h"
 #include"fournisseur.h"
+#include "interface.h"
 
 int main(int argc, char *argv[])
 {
