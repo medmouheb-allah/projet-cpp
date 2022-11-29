@@ -4,6 +4,8 @@ QT += svg
 #QT += widgets svg
 QT += opengl
 QT += xml
+QT += serialport
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG +=console
@@ -25,6 +27,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    arduino.cpp \
     connection.cpp \
     image.cpp \
     main.cpp \
@@ -32,21 +35,25 @@ SOURCES += \
     qrcode.cpp \
     qrcodegen.cpp \
     rechercher.cpp \
+    regulateur_temperature.cpp \
     salle.cpp \
     statistique.cpp \
     trier.cpp
 
 HEADERS += \
+    arduino.h \
     connection.h \
     image.h \
     mainwindow.h \
     qrcode.h \
     qrcodegen.h \
+    regulateur_temperature.h \
     salle.h \
     statistique.h
 
 FORMS += \
     mainwindow.ui \
+    regulateur_temperature.ui \
     statistique.ui
 
 # Default rules for deployment.

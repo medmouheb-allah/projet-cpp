@@ -5,7 +5,6 @@
 #include <QSqlQueryModel>
 #include <QString>
 #include <QPixmap>
-//#include <QVariant>
 #include <QBuffer>
 
 using namespace std;

@@ -31,6 +31,9 @@
 #include "statistique.h"
 #include "ui_statistique.h"
 
+#include "regulateur_temperature.h"
+#include "ui_regulateur_temperature.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -77,11 +80,16 @@ private slots:
 
     void on_comboBox_supprimer_currentIndexChanged(const QString &arg1);
 
+
+
+
+
+    void on_Regulateur_temp_clicked() ;
+
 private:
     Ui::MainWindow *ui;
 
     Salle Stmp , S;
-
 
 };
 

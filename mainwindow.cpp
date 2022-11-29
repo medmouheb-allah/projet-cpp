@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <iostream>
+#include <string>
 
 
 
@@ -442,4 +443,13 @@ void MainWindow::on_comboBox_supprimer_currentIndexChanged(const QString &arg1)
         }
     }
 
+}
+
+//////////////////////////arduino////////////////////////////////////////
+
+
+void MainWindow::on_Regulateur_temp_clicked()
+{
+    Regulateur_temperature Reg ;
+    Reg.exec();
 }
