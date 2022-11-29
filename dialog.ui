@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1500</width>
-    <height>900</height>
+    <width>1253</width>
+    <height>769</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -807,7 +807,7 @@ background: white;</string>
      <property name="geometry">
       <rect>
        <x>600</x>
-       <y>70</y>
+       <y>90</y>
        <width>201</width>
        <height>61</height>
       </rect>
@@ -834,7 +834,7 @@ color: rgb(0, 0, 0);
      <property name="geometry">
       <rect>
        <x>780</x>
-       <y>40</y>
+       <y>70</y>
        <width>101</width>
        <height>41</height>
       </rect>
@@ -891,7 +891,7 @@ gridline-color:rgb(228, 128, 255)
      <property name="geometry">
       <rect>
        <x>780</x>
-       <y>40</y>
+       <y>70</y>
        <width>331</width>
        <height>41</height>
       </rect>
@@ -961,7 +961,7 @@ font: 10pt &quot;Elephant&quot;;</string>
        <rect>
         <x>0</x>
         <y>-10</y>
-        <width>131</width>
+        <width>161</width>
         <height>31</height>
        </rect>
       </property>
@@ -1348,7 +1348,7 @@ font: 8pt &quot;Elephant&quot;;</string>
      <property name="geometry">
       <rect>
        <x>1070</x>
-       <y>50</y>
+       <y>80</y>
        <width>41</width>
        <height>21</height>
       </rect>
@@ -1457,9 +1457,9 @@ font: 8pt &quot;Elephant&quot;;</string>
     <widget class="QPushButton" name="pushButton_6">
      <property name="geometry">
       <rect>
-       <x>1260</x>
-       <y>840</y>
-       <width>101</width>
+       <x>1020</x>
+       <y>10</y>
+       <width>131</width>
        <height>41</height>
       </rect>
      </property>
@@ -1507,17 +1507,7 @@ gridline-color:rgb(228, 128, 255)
 }</string>
      </property>
      <property name="text">
-      <string>Trier</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_6">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>790</y>
-       <width>451</width>
-       <height>41</height>
-      </rect>
+      <string>Deconnecter</string>
      </property>
     </widget>
     <zorder>label_pic_2</zorder>
@@ -1540,7 +1530,658 @@ gridline-color:rgb(228, 128, 255)
     <zorder>label_pic_7</zorder>
     <zorder>affichage_employe</zorder>
     <zorder>pushButton_6</zorder>
-    <zorder>lineEdit_6</zorder>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Page</string>
+    </attribute>
+    <widget class="QLabel" name="label_pic_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>-40</y>
+       <width>1261</width>
+       <height>891</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 229, 198);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../Downloads/310042565_1253044795483244_7626101413920627149_n.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>660</x>
+       <y>150</y>
+       <width>491</width>
+       <height>411</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Elephant</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox:focus
+{
+	background-color: rgb(255, 166, 221);
+font: 10pt &quot;Franklin Gothic Heavy&quot;;
+color:rgb(8, 8, 8);
+}
+</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-10</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Franklin Gothic Heavy&quot;;
+color:rgb(8, 8, 8);</string>
+      </property>
+      <property name="text">
+       <string>Arduino :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>60</y>
+        <width>69</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>90</y>
+        <width>311</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Franklin Gothic Heavy&quot;;
+color:rgb(8, 8, 8);</string>
+      </property>
+      <property name="text">
+       <string>Etat :</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>-560</x>
+        <y>-120</y>
+        <width>471</width>
+        <height>281</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Elephant</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox:focus
+{
+	background-color: rgb(255, 166, 221);
+font: 10pt &quot;Franklin Gothic Heavy&quot;;
+color:rgb(8, 8, 8);
+}
+</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="label_25">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>-10</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Franklin Gothic Heavy&quot;;
+color:rgb(8, 8, 8);</string>
+       </property>
+       <property name="text">
+        <string>Arduino :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>60</y>
+         <width>69</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>120</y>
+         <width>311</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_27">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>120</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Franklin Gothic Heavy&quot;;
+color:rgb(8, 8, 8);</string>
+       </property>
+       <property name="text">
+        <string>Etat :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_28">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>50</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Franklin Gothic Heavy&quot;;
+color:rgb(8, 8, 8);</string>
+       </property>
+       <property name="text">
+        <string>LED :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_10">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>40</y>
+         <width>71</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Elephant</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+
+
+{
+	
+	background-color:rgb(85, 0, 0);
+
+
+
+	border-style: outset;
+    border-width: 2px;
+    border-radius: 14px;
+    border-color: beige;
+    font: bold 14px;
+ 
+    padding: 10px;
+	color: rgb(255, 255, 255);
+
+}
+QPushButton:hover
+{
+		background-color: rgb(237, 218, 204);
+	color: rgb(0, 0, 0);
+	gridline-color: rgb(94, 118, 255);
+}
+QPushButton:pressed
+{
+	
+	background-color: rgb(255, 180, 200);
+gridline-color:rgb(228, 128, 255)
+
+}</string>
+       </property>
+       <property name="text">
+        <string>ON</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_29">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>260</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Franklin Gothic Heavy&quot;;
+color:rgb(8, 8, 8);</string>
+      </property>
+      <property name="text">
+       <string>Buzzer :</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_signal">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>260</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Elephant</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+
+
+{
+	
+	background-color:rgb(85, 0, 0);
+
+
+
+	border-style: outset;
+    border-width: 2px;
+    border-radius: 14px;
+    border-color: beige;
+    font: bold 14px;
+ 
+    padding: 10px;
+	color: rgb(255, 255, 255);
+
+}
+QPushButton:hover
+{
+		background-color: rgb(237, 218, 204);
+	color: rgb(0, 0, 0);
+	gridline-color: rgb(94, 118, 255);
+}
+QPushButton:pressed
+{
+	
+	background-color: rgb(255, 180, 200);
+gridline-color:rgb(228, 128, 255)
+
+}</string>
+      </property>
+      <property name="text">
+       <string>Signal</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_30">
+      <property name="geometry">
+       <rect>
+        <x>-330</x>
+        <y>-30</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Franklin Gothic Heavy&quot;;
+color:rgb(8, 8, 8);</string>
+      </property>
+      <property name="text">
+       <string>Arduino :</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>200</y>
+        <width>321</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 6px;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_35">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>280</y>
+        <width>311</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_36">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>330</y>
+        <width>301</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="sendbutton">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>380</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Franklin Gothic Heavy</family>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	background-color: rgb(237, 218, 204);
+	color: rgb(0, 0, 0);
+border-style: solid;
+    border-radius: 6;
+border-radius: 14px;
+
+	border-style: outset;
+    border-width: 2px;
+    border-radius: 14px;
+    border-color: beige;
+  
+ 
+    padding: 10px;
+	
+	
+	
+	font: 10pt &quot;Franklin Gothic Heavy&quot;;
+}
+QPushButton:hover
+{
+background-color:rgb(85,110,255);
+	color: rgb(0, 0, 0);
+}
+QPushButton:pressed
+{
+background-color:rgb(85,170,255);
+}</string>
+     </property>
+     <property name="text">
+      <string>Send</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>160</y>
+       <width>441</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-style: solid;
+    border-radius: 6;
+border-radius: 14px;
+
+	border-style: outset;
+    border-width: 2px;
+    border-radius: 14px;
+   
+  
+ 
+    padding: 10px;
+	
+	
+	
+	font: 10pt &quot;Franklin Gothic Heavy&quot;;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_7">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>380</y>
+       <width>341</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 9px;
+background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>140</y>
+       <width>491</width>
+       <height>331</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_31">
+     <property name="geometry">
+      <rect>
+       <x>950</x>
+       <y>980</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;Franklin Gothic Heavy&quot;;
+color:rgb(8, 8, 8);</string>
+     </property>
+     <property name="text">
+      <string>Arduino :</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_32">
+     <property name="geometry">
+      <rect>
+       <x>800</x>
+       <y>800</y>
+       <width>201</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Elephant</family>
+       <pointsize>11</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 11pt &quot;Elephant&quot;;
+color: rgb(0, 0, 0);
+</string>
+     </property>
+     <property name="text">
+      <string>Listes des employés:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_33">
+     <property name="geometry">
+      <rect>
+       <x>1070</x>
+       <y>780</y>
+       <width>201</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Elephant</family>
+       <pointsize>11</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 11pt &quot;Elephant&quot;;
+color: rgb(0, 0, 0);
+</string>
+     </property>
+     <property name="text">
+      <string>Listes des employés:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_34">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>110</y>
+       <width>201</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Elephant</family>
+       <pointsize>11</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 11pt &quot;Elephant&quot;;
+color: rgb(0, 0, 0);
+</string>
+     </property>
+     <property name="text">
+      <string>Chat Box :</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_9">
+     <property name="geometry">
+      <rect>
+       <x>1260</x>
+       <y>360</y>
+       <width>341</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 9px;
+background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <zorder>label_pic_4</zorder>
+    <zorder>groupBox_2</zorder>
+    <zorder>groupBox_4</zorder>
+    <zorder>label_31</zorder>
+    <zorder>label_32</zorder>
+    <zorder>label_33</zorder>
+    <zorder>label_34</zorder>
+    <zorder>textEdit</zorder>
+    <zorder>sendbutton</zorder>
+    <zorder>lineEdit_7</zorder>
+    <zorder>lineEdit_9</zorder>
    </widget>
   </widget>
  </widget>

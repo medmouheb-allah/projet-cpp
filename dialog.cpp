@@ -5,6 +5,11 @@
 #include "connection.h"
 #include"stat_combo.h"
 #include<QWidget>
+#include<QTime>
+#include <QHostAddress>
+#include"mainwindow.h"
+
+
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -16,7 +21,7 @@ Dialog::Dialog(QWidget *parent) :
     //test= c.createconnection() ;
     ui->setupUi(this);
 
-    ui->lineEdit_3->setValidator(new QIntValidator(1000,9999999,this) ) ;
+    ui->lineEdit_3->setValidator(new QIntValidator(1000000,999999999,this) ) ;
     ui->lineEdit_5->setValidator(new QIntValidator(1000,99999999,this)) ;
 
     QRegularExpression r1("\\b[A-Z._%+-]+@[A-Z.-]+\\.[A-Z]\\b",QRegularExpression::CaseInsensitiveOption);
@@ -58,6 +63,24 @@ Dialog::Dialog(QWidget *parent) :
         ui->comboBox_2->setModel(emp.tester());
         ui->affichage_employe->setModel(em.afficher()) ;
 
+        ui->comboBox_4->setModel(em.afficher2()) ;
+        //chat
+            socket.connectToHost(QHostAddress("127.0.0.1"), 9999);
+            connect(&socket, SIGNAL(readyRead()), this, SLOT(onReadyRead()));
+
+            connect(ui->sendbutton, SIGNAL(pressed()), this, SLOT(onSendButtonPressed()));
+
+
+        //Arduino
+            int ret=A.connect_arduino(); // lancer la connexion à arduino
+            switch(ret){
+            case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+                break;
+            case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+               break;
+            case(-1):qDebug() << "arduino is not available";
+            }
+             QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
 
 
 }
@@ -122,6 +145,10 @@ void Dialog::on_pushButton_3_clicked()
 
 }
 
+
+
+
+
 void Dialog::on_b2_clicked()
 {
     employe em ;
@@ -149,6 +176,7 @@ void Dialog::on_b2_clicked()
 }
 
 
+
 void Dialog::on_affichage_employe_doubleClicked()
 {
    // selected=ui->affichage_employe->model()
@@ -170,6 +198,8 @@ void Dialog::on_affichage_employe_doubleClicked()
 }
 
 
+
+//Affichage trier
 void Dialog::on_pushButton_2_clicked()
 {
     employe emp ;
@@ -200,6 +230,9 @@ void Dialog::on_pushButton_2_clicked()
     ui->affichage_employe->setModel(emp.rechercherafficher(aff)) ;
 }
 */
+
+
+//export pdf
 void Dialog::on_pushButton_5_clicked()
 {
     QString strStream;
@@ -264,6 +297,9 @@ void Dialog::on_pushButton_5_clicked()
                 doc.print(&printer);
     }
 
+
+
+
 void Dialog::on_lineEdit_8_textChanged(const QString &arg1)
 {
   employe emp ;
@@ -272,6 +308,9 @@ void Dialog::on_lineEdit_8_textChanged(const QString &arg1)
 
 }
 
+
+
+//stat
 void Dialog::on_pushButton_4_clicked()
 {
      stat_combo *s = new stat_combo(); //constructeur par defaut creation instance
@@ -281,4 +320,116 @@ void Dialog::on_pushButton_4_clicked()
     s->show();
 
 
+}
+
+
+
+
+void Dialog::onReadyRead()
+{
+    QByteArray data = socket.readAll();
+
+    ui->textEdit->append(QString::fromStdString(data.toStdString()));
+}
+
+
+void Dialog::onSendButtonPressed()
+{
+    if(ui->lineEdit_7->text() == "")
+           ui->lineEdit_7->setStyleSheet("border: 1px solid red;");
+       else{
+           ui->lineEdit_7->setStyleSheet("");
+           QTime t = t.currentTime();
+           QString username;
+           //       for(int i=0; i<ui->username->text().length()-10; i++)
+                 //     username = ui->->text()[i];
+       //   QString  text = "[" + QString::number(t.hour()) + ":" + QString::number(t.minute()) + "] " + username + ": " + text;
+          QString text = ui->lineEdit_7->text();
+           ui->lineEdit_7->setText("");
+           socket.write(QByteArray::fromStdString(text.toStdString()));
+
+
+      }
+}
+
+void Dialog::on_pushButton_6_clicked()
+{
+    QMessageBox::information(nullptr, QObject::tr("Gestion-Des-Employes"),
+                                          QObject::tr(" Déconnection avec succes!\n"
+                                                      "Taper sur cancel pour fermer."), QMessageBox::Cancel);
+        Dialog::close();
+   //  MainWindow   a->show();
+}
+
+/*void Dialog::on_pushButton_9_clicked()
+{
+     A.write_to_arduino("1");
+} */
+
+/*void Dialog::on_bouton1_3_clicked()
+{
+     A.write_to_arduino("2");
+}*/
+
+
+void Dialog::update_label()
+{
+    data=A.read_from_arduino();
+
+     int result = data.split( ',' )[0].toInt();
+
+    if(result==1)
+
+        ui->label_19->setText("SAFE");
+
+    else if (result==0)
+
+        ui->label_19->setText("DANGER");
+
+}
+
+
+/*void Dialog::on_bouton1_4_clicked()
+{
+     A.write_to_arduino("4") ;
+}*/
+
+void Dialog::on_pushButton_signal_clicked()
+{
+    data2.clear() ;
+
+    QSqlQuery q ;
+    QString id_salle=ui->comboBox_4->currentText() ;
+    q.prepare("select * from salle_evenement ");
+        if(q.exec())
+           {
+               while(q.next())
+               {
+                   //Remplir tous les champs par les données concernées
+
+       if(q.value(0).toString()==id_salle)
+       {
+                   ui->lineEdit_9->setText(q.value(6).toString());
+
+
+       }
+       }
+       }
+          int securite=ui->lineEdit_9->text().toInt();
+
+          if (securite==3)
+          {
+              ui->label_36->setText("Not safe") ;
+          }  else
+
+          {
+              ui->label_36->setText("Safe ") ;
+          }
+          QByteArray data ;
+          data.setNum(securite) ;
+
+
+
+  if(securite==3)
+    A.write_to_arduino("s") ;
 }

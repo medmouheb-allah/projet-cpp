@@ -5,10 +5,13 @@
 #include<QFileDialog>
 #include<QTextStream>
 #include<QTextDocument>
-#include<Qprinter>
-#include<Qpainter>
+#include<QPrinter>
+#include<QPainter>
+#include <QTcpSocket>
+#include<arduino.h>
 
-namespace Ui {
+namespace Ui
+{
 class Dialog;
 }
 
@@ -43,13 +46,40 @@ private slots :
         void on_pushButton_5_clicked();
 
 
-        void on_lineEdit_8_textChanged(const QString &arg1);
+       // void on_lineEdit_8_textChanged(const QString &arg1);
 
         void on_pushButton_4_clicked();
+
+       // void on_pushButton_7_clicked();
+
+        void on_lineEdit_8_textChanged(const QString &arg1);
+
+        void onSendButtonPressed();
+
+       void onReadyRead() ;
+
+        void on_pushButton_6_clicked();
+
+        //void on_pushButton_9_clicked();
+
+      //  void on_bouton1_3_clicked();
+
+        void update_label() ;
+
+    //    void on_bouton1_4_clicked();
+
+        void on_pushButton_signal_clicked();
+
+     //   void on_refreshButton_clicked() ;
+
 
 private:
     Ui::Dialog *ui;
     employe em ;
+    QTcpSocket socket;
+    QByteArray data;
+    Arduino A;
+     QByteArray data2;
 };
 
 #endif // DIALOG_H

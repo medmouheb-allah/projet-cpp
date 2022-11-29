@@ -12,6 +12,7 @@ employe::employe(int d,QString a,QString b,QString c,int e,QString f)
   genre=f ;
 }
 
+
 bool employe :: ajouter()
 {
     QSqlQuery query ;
@@ -44,6 +45,7 @@ bool  employe::supprimer(int id)
 }
 
 
+
 QSqlQueryModel* employe:: tester()
 {
     QSqlQueryModel* model=new QSqlQueryModel();// declaration d'un modele
@@ -51,6 +53,8 @@ QSqlQueryModel* employe:: tester()
    //model->setHeaderData(0, Qt::Horizontal, QObject::tr("CIN"));
    return model;
 }
+
+
 
 
 QSqlQueryModel * employe:: afficher()
@@ -69,6 +73,7 @@ QSqlQueryModel * employe:: afficher()
 
 
 }
+
 
 
 
@@ -100,12 +105,15 @@ bool employe::modifier(int id,QString email,QString nom,QString prenom,int num, 
 
 
 
+
+
 QSqlQueryModel * employe::AfficherTrieCIN()
 {
     QSqlQueryModel * model = new QSqlQueryModel();
     model->setQuery("SELECT * FROM EMPLOYE ORDER BY ID_EMP");
     return model;
 }
+
 
 
 
@@ -117,12 +125,14 @@ QSqlQueryModel * employe::AfficherTrieNom()
 }
 
 
+
 QSqlQueryModel * employe::AfficherTriePrenom()
 {
     QSqlQueryModel * model = new QSqlQueryModel();
     model->setQuery("SELECT * FROM EMPLOYE ORDER BY PRENOM_EMP");
     return model;
 }
+
 
 
 
@@ -138,4 +148,14 @@ QSqlQueryModel * employe::rechercherafficher(QString nom)
 
 }
 
+QSqlQueryModel * employe:: afficher2()
+{
+  QSqlQueryModel * model=new QSqlQueryModel() ;
 
+  model->setQuery("select num_salle from salle_evenement ") ;
+
+ // qDebug() << res2 << '\n';
+  return  model ;
+
+
+}

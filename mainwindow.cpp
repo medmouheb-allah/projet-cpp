@@ -37,11 +37,11 @@ void MainWindow::on_pushButton_clicked()
                            qry.exec();
 
 
-                                // ui->label_errur->setText("[+]Valid Username and Password");
-                       }else{
-                                              //   ui->label_errur->setText("[-]UnValid Username and Password");
 
-                           QMessageBox::information(this, "Failed","Log In Failed");
+                       }else
+                       {
+
+                           QMessageBox::information(this, "Failed","Log In Failed\n unvalid username or password");
 
                                    }
 

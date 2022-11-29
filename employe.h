@@ -42,6 +42,8 @@ public:
     QSqlQueryModel * rechercherafficher(QString ) ;
     
     QString  export_pdf() ;
+
+    QSqlQueryModel * afficher2() ;
 };
 
 #endif // EMPLOYE_H
