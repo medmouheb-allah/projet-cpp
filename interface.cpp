@@ -247,7 +247,7 @@ void Interface::update_label()
         if (result == 0 )
             ui->fireLabel->setText("FIRE");
         else if (result == 1)
-            ui->fireLabel->setText("NO FIRE");
+            ui->fireLabel->setText("");
 
  /* if(data=="1")
   {
@@ -271,13 +271,13 @@ void Interface::update_label()
 
 void Interface::on_pushButton_2_clicked()
 {
-    C.write_to_arduino("0"); //envoyer 0 à arduino
+   // C.write_to_arduino("0"); //envoyer 0 à arduino
 
 }
 
 void Interface::on_pushButton_3_clicked()
 {
-    C.write_to_arduino("1"); //envoyer 1 à arduino
+  //  C.write_to_arduino("1"); //envoyer 1 à arduino
 }
 
 void Interface::on_pushButton_4_clicked()
@@ -289,7 +289,7 @@ void Interface::on_pushButton_4_clicked()
      else
       C.write_to_arduino("0"); //envoyer 0 à arduino*/
    //  mod auto
-     C.write_to_arduino("2"); //envoyer 2 à arduino*/
+  //   C.write_to_arduino("2"); //envoyer 2 à arduino*/
 
 
 }
@@ -301,6 +301,6 @@ void Interface::on_refreshButton_clicked()
 void Interface::on_offButton_clicked()
 {
         C.write_to_arduino("s");
-    }
+}
 
 
