@@ -24,8 +24,8 @@ Interface::Interface(QWidget *parent) :
       ui->le_prix->setValidator(new QIntValidator(100, 999999999, this));
       ui->le_total->setValidator(new QIntValidator(100, 999999999, this));
       ui->table_facture->setModel(A.afficher());
-      ui->comboBox_2->setModel(A.combo_fournisseur());
-      ui->comboBox_3->setModel(A.combo_evenement());
+
+
       int ret=C.connect_arduino(); // lancer la connexion à arduino
       switch(ret){
       case(0):qDebug()<< "arduino is available and connected to : "<< C.getarduino_port_name();
@@ -177,15 +177,14 @@ void Interface::on_sendBtn_clicked()
 
 void Interface::on_pushButton_7_clicked()
 {
-    int CODE_EVENNEMENT=ui->comboBox_3->currentText().toInt();
-    QString ID_FOURNISSEUR=ui->comboBox_2->currentText();
+
     QString DESCRIPTION = ui->le_description->text();
     QString QUANTITE=ui->le_quantite->text();
     QString PRIXUNIT =ui->le_prix ->text();
     QString TOTAL = ui ->le_total ->text();
 
 
-        Facture C(DESCRIPTION,QUANTITE,PRIXUNIT,TOTAL,ID_FOURNISSEUR,CODE_EVENNEMENT);
+        Facture C(DESCRIPTION,QUANTITE,PRIXUNIT,TOTAL);
         bool test=C.ajouter();
         QMessageBox msgBox;
         if(test)
@@ -199,8 +198,6 @@ void Interface::on_pushButton_7_clicked()
 
 void Interface:: on_pushButton_clicked()
 {
-    QString ID_FOURNISSEUR =ui->comboBox_2->currentText();
-    int CODE_EVENNEMENT=ui->comboBox_3->currentText().toInt();
 
 QString DESCRIPTION = ui->le_description->text();
 QString QUANTITE=ui->le_quantite->text();
@@ -208,7 +205,7 @@ QString PRIXUNIT =ui->le_prix ->text();
 QString TOTAL = ui ->le_total ->text();
 
 
-    Facture C(DESCRIPTION,QUANTITE,PRIXUNIT,TOTAL,ID_FOURNISSEUR,CODE_EVENNEMENT);
+    Facture C(DESCRIPTION,QUANTITE,PRIXUNIT,TOTAL);
     if(C.modifier_facture(DESCRIPTION))
        {
                 QMessageBox::information(nullptr, QObject::tr("Modifier une FACTURE"),
@@ -227,8 +224,6 @@ QString TOTAL = ui ->le_total ->text();
           ui->le_quantite->setText("");
           ui->le_prix->setText("");
           ui->le_total->setText("");
-          ui->comboBox_2->currentText();
-          ui->comboBox_3->currentText();
           ui->setupUi(this);
 
        }

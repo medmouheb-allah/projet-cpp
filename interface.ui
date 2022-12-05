@@ -1836,41 +1836,6 @@ QPushButton:pressed
      <string>Ajouter</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox_2">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>520</y>
-      <width>141</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>QUANTITE</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QComboBox" name="comboBox_3">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
-      <y>520</y>
-      <width>131</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>PRIX_UNIT</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Description</string>
-     </property>
-    </item>
-   </widget>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
@@ -2068,8 +2033,6 @@ QPushButton:pressed
    <zorder>pb_modifier_2</zorder>
    <zorder>pb_modifier_3</zorder>
    <zorder>pushButton_11</zorder>
-   <zorder>comboBox_2</zorder>
-   <zorder>comboBox_3</zorder>
    <zorder>groupBox_3</zorder>
   </widget>
  </widget>
